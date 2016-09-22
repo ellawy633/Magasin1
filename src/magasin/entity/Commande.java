@@ -39,6 +39,18 @@ public class Commande implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
+    
+      private int prix;
+
+    public int getPrix() {
+        return prix;
+    }
+
+    public void setPrix(int prix) {
+        this.prix = prix;
+    }
+    
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateEtHeureCommande;
@@ -52,6 +64,7 @@ public class Commande implements Serializable {
     @ManyToOne
     @JoinColumn(name = "client_id")
     private Client client;
+  
 
     public Date getDateEtHeureCommande() {
         return dateEtHeureCommande;
